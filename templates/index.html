@@ -1,0 +1,12 @@
+{% block content %}
+<form action="/" method="get" >
+  {% csrf_token %}
+    <p align="center">{{ form.choose_termin }}</p>
+
+    <p align="center"><input type="submit" value="Показать определение"></p>
+    {% if message != None and termin != None %}
+        <p align="center">{{ termin }} - {{ message }}</p>
+    {% endif %}
+
+</form>
+{% endblock %}
