@@ -1,12 +1,26 @@
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Термины</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'my_style.css' %}">
+</head>
+<body>
 {% block content %}
-<form action="/" method="get" >
-  {% csrf_token %}
-    <p align="center">{{ form.choose_termin }}</p>
+    <h2 align="center">Термины по теории проектирования баз данных</h2>
+    <form action="/" method="get" >
+      {% csrf_token %}
+        <p align="center">{{ form.choose_termin }}</p>
 
-    <p align="center"><input type="submit" value="Показать определение"></p>
-    {% if message != None and termin != None %}
-        <p align="center">{{ termin }} - {{ message }}</p>
-    {% endif %}
+        <p align="center"><input type="submit" class="button" value="Показать определение"></p>
+    <hr align="center" width="100%" size="2" color="#ff0000" />
+<br />
+        {% if message != None and termin != None %}
+            <p align="center" style="margin: 0% 10%"> <span class="bold-text">{{ termin }}</span> - {{ message }}</p>
+        {% endif %}
 
-</form>
+    </form>
 {% endblock %}
+</body>
+</html>

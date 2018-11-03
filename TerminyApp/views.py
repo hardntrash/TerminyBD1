@@ -10,7 +10,7 @@ from .models import TerminyModel
 class MainForm(forms.ModelForm):
     choose_termin = forms.ModelChoiceField(queryset=TerminyModel.objects.all(),
                                            empty_label="Выбери термин",
-                                           widget=forms.Select(attrs={'termin': 'dropdown'}), label="Термин")
+                                           widget=forms.Select(attrs={'termin': 'dropdown', 'class': 'dropdown-list'}), label="Термин")
 
     class Meta:
         model = TerminyModel
